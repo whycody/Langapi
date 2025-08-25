@@ -2,6 +2,7 @@ import { Schema, model, Document } from 'mongoose';
 
 export interface WordHeuristicState extends Document {
   wordId: string;
+  userId: string;
   interval: number;
   repetitionsCount: number;
   lastReviewDate: Date;
@@ -14,6 +15,7 @@ export interface WordHeuristicState extends Document {
 
 const wordHeuristicStateSchema = new Schema<WordHeuristicState>({
   _id: { type: String, required: true },
+  userId: { type: String, required: true },
   interval: { type: Number, required: true },
   repetitionsCount: { type: Number, required: true },
   lastReviewDate: { type: Date, required: true },
